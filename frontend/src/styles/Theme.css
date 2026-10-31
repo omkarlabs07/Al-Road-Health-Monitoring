@@ -1,0 +1,406 @@
+/* =========================================================
+   THEME SYSTEM
+   Only changes colors.
+   Does NOT change size, spacing, width, height or layout.
+   ========================================================= */
+
+/* ================= LIGHT MODE ================= */
+
+:root {
+  --theme-bg: #f4f7fb;
+  --theme-card: #ffffff;
+  --theme-text: #14213d;
+  --theme-text-secondary: #667085;
+  --theme-border: #edf0f5;
+  --theme-shadow: rgba(25, 40, 70, 0.07);
+}
+
+
+/* ================= DARK MODE ================= */
+
+html.dark {
+  --theme-bg: #0f172a;
+  --theme-card: #1e293b;
+  --theme-text: #f8fafc;
+  --theme-text-secondary: #cbd5e1;
+  --theme-border: #334155;
+  --theme-shadow: rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   ONLY THEME COLORS
+   ========================================================= */
+
+html.dark body {
+  background: var(--theme-bg);
+  color: var(--theme-text);
+}
+
+
+/* Main application background */
+
+html.dark .dashboard-page,
+html.dark .analytics-page,
+html.dark .map-page,
+html.dark .reports-page,
+html.dark .upload-page,
+html.dark .workers-page {
+  background: var(--theme-bg);
+}
+
+
+/* Cards */
+
+html.dark .dashboard-box,
+html.dark .stat-card,
+html.dark .analytics-box,
+html.dark .analytics-stat-card,
+html.dark .map-card,
+html.dark .map-stat,
+html.dark .map-legend,
+html.dark .health-table-box,
+html.dark .quick-actions-box,
+html.dark .analytics-insight,
+html.dark .report-card,
+html.dark .reports-box,
+html.dark .health-box {
+  background: var(--theme-card);
+  border-color: var(--theme-border);
+  box-shadow: 0 5px 18px var(--theme-shadow);
+}
+
+
+/* Headings */
+
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4 {
+  color: var(--theme-text);
+}
+
+
+/* Normal text */
+
+html.dark p,
+html.dark span,
+html.dark label {
+  color: var(--theme-text-secondary);
+}
+
+
+/* Keep coloured icons/text visible */
+
+html.dark .text-cyan-400 {
+  color: #22d3ee !important;
+}
+
+html.dark .text-cyan-700 {
+  color: #67e8f9 !important;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+html.dark header {
+  background: #1e293b !important;
+  border-bottom: 1px solid #334155;
+}
+
+
+/* Navbar title */
+
+html.dark header h1 {
+  color: #f8fafc !important;
+}
+
+
+/* Navbar subtitle */
+
+html.dark header p {
+  color: #cbd5e1 !important;
+}
+
+
+/* Admin */
+
+html.dark header .font-semibold {
+  color: #f8fafc !important;
+}
+
+
+/* Admin circle */
+
+html.dark header .bg-cyan-100 {
+  background: #164e63 !important;
+}
+
+html.dark header .text-cyan-700 {
+  color: #67e8f9 !important;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+/*
+   Sidebar already has dark design.
+   We DO NOT change its size or structure.
+*/
+
+html.dark aside {
+  background: #020617 !important;
+}
+
+
+/* Sidebar normal links */
+
+html.dark aside a {
+  color: #cbd5e1;
+}
+
+
+/* Sidebar active link */
+
+html.dark aside a.bg-cyan-500 {
+  background: #06b6d4 !important;
+  color: white !important;
+}
+
+
+/* Sidebar hover */
+
+html.dark aside a:hover {
+  color: white;
+}
+
+
+/* =========================================================
+   DASHBOARD TABLE
+   ========================================================= */
+
+html.dark .health-table th {
+  background: #172033;
+  color: #cbd5e1;
+  border-color: #334155;
+}
+
+html.dark .health-table td {
+  color: #cbd5e1;
+  border-color: #334155;
+}
+
+html.dark .health-table td strong,
+html.dark .score-value {
+  color: #f8fafc !important;
+}
+
+html.dark .health-table tbody tr:hover {
+  background: #263449;
+}
+
+
+/* =========================================================
+   ANALYTICS TABLE
+   ========================================================= */
+
+html.dark .analytics-condition.excellent,
+html.dark .analytics-condition.good {
+  background: rgba(22, 199, 132, 0.15);
+}
+
+html.dark .analytics-condition.fair {
+  background: rgba(245, 180, 0, 0.15);
+}
+
+html.dark .analytics-condition.poor {
+  background: rgba(255, 121, 0, 0.15);
+}
+
+html.dark .analytics-condition.critical {
+  background: rgba(239, 35, 60, 0.15);
+}
+
+
+/* =========================================================
+   DASHBOARD REPORT ITEMS
+   ========================================================= */
+
+html.dark .report-item {
+  border-color: #334155;
+}
+
+html.dark .report-item:hover {
+  background: #263449;
+}
+
+html.dark .report-item h3 {
+  color: #f8fafc;
+}
+
+html.dark .report-details {
+  color: #cbd5e1;
+}
+
+
+/* =========================================================
+   INPUTS / FORMS
+   ========================================================= */
+
+html.dark input,
+html.dark textarea,
+html.dark select {
+  background: #1e293b;
+  color: #f8fafc;
+  border-color: #475569;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #94a3b8;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+html.dark button {
+  color: inherit;
+}
+
+
+/* Keep coloured buttons */
+
+html.dark .bg-cyan-500 {
+  background: #06b6d4 !important;
+  color: white !important;
+}
+
+
+/* =========================================================
+   QUICK ACTIONS
+   ========================================================= */
+
+html.dark .quick-action {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+html.dark .quick-action h3 {
+  color: #f8fafc;
+}
+
+html.dark .quick-action p {
+  color: #cbd5e1;
+}
+
+
+/* =========================================================
+   THEME TOGGLE
+   ========================================================= */
+
+.theme-toggle {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+
+  width: 48px;
+  height: 48px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #ffffff;
+  color: #14213d;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+
+  z-index: 9999;
+
+  transition: 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+}
+
+html.dark .theme-toggle {
+  background: #1e293b;
+  color: #f8fafc;
+  border: 1px solid #475569;
+}
+
+
+/* =========================================================
+   CHART BACKGROUND SUPPORT
+   ========================================================= */
+
+html.dark .chart-container,
+html.dark .bar-chart-container,
+html.dark .doughnut-container {
+  color: #f8fafc;
+}
+
+
+/* =========================================================
+   MAP
+   ========================================================= */
+
+html.dark .map-card-header h2,
+html.dark .map-legend h3 {
+  color: #f8fafc;
+}
+
+html.dark .map-card-header p,
+html.dark .map-legend,
+html.dark .legend-items div {
+  color: #cbd5e1;
+}
+
+
+/* =========================================================
+   REPORTS
+   ========================================================= */
+
+html.dark .reports-page h1,
+html.dark .reports-page h2,
+html.dark .reports-page h3 {
+  color: #f8fafc;
+}
+
+html.dark .reports-page p,
+html.dark .reports-page span {
+  color: #cbd5e1;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+html.dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 10px;
+}

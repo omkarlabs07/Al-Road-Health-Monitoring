@@ -1,0 +1,26 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+dist/
+
+# Secrets
+.env
+
+# Runtime data
+backend/database/*.db
+backend/uploads/*
+backend/results/*
+backend/logs/
+backend/reports/
+backend/excel/
+
+# Duplicates / OS / editor
+*(1).*
+.DS_Store
+.vscode/
+.idea/
