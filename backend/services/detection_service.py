@@ -57,6 +57,8 @@ def detect_potholes(image_path):
         results = model.predict(
             source=image,
             conf=0.25,
+            imgsz=320,
+            device="cpu",
             verbose=False
         )
 
@@ -201,4 +203,3 @@ def detect_potholes(image_path):
         print("====================================")
 
         raise
-    
