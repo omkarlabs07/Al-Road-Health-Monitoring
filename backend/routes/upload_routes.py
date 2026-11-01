@@ -277,11 +277,14 @@ def upload_image():
             if img.mode != "RGB":
                 img = img.convert("RGB")
 
+            # Resize big images to save server memory
+            img.thumbnail((1024, 1024))
+
             # Save as JPG
             img.save(
                 final_path,
                 "JPEG",
-                quality=95
+                quality=85
             )
 
         except Exception as e:
@@ -464,3 +467,4 @@ def upload_image():
             )
 
         }), 500
+    
