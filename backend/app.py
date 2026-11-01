@@ -26,10 +26,12 @@ from security import audit_api_activity
 
 app = Flask(__name__)
 
-CORS(app, supports_credentials=True, origins=[
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-])
+FRONTEND_URL = os.environ.get("FRONTEND_URL", "").rstrip("/")
+ALLOWED_ORIGINS = ["http://localhost:5173", "http://127.0.0.1:5173"]
+if FRONTEND_URL:
+    ALLOWED_ORIGINS.append(FRONTEND_URL)
+
+CORS(app, supports_credentials=True, origins=ALLOWED_ORIGINS)
 app.config.update(
     SECRET_KEY=os.environ.get("FLASK_SECRET_KEY") or secrets.token_hex(32),
     SESSION_COOKIE_HTTPONLY=True,
@@ -45,7 +47,7 @@ def protect_session_routes():
     """Use same-origin Vite proxy in development; deny cross-site state changes."""
     if request.method in {"POST", "PUT", "PATCH", "DELETE"}:
         origin = request.headers.get("Origin")
-        allowed_origins = {"http://localhost:5173", "http://127.0.0.1:5173"}
+        allowed_origins = set(ALLOWED_ORIGINS)
         if origin and origin not in allowed_origins:
             return jsonify({"success": False, "message": "Request origin is not allowed."}), 403
 
@@ -176,4 +178,3 @@ if __name__ == "__main__":
         port=5000,
         debug=True
     )
-    
